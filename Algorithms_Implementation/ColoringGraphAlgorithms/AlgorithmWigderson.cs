@@ -28,20 +28,72 @@ namespace Algorithms_Implementation.ColoringGraphAlgorithms
 
         public void StartColoring()
         {
+            int ChromaticNumber;
             graph.ResetColors();
             InitializeColors();
-            SortGraphByNeighboursCountDescending();
-
-            for (int i = 0; i < graph.Count(); i++)
+            int ChromaticNumber1 = AlgorithmC(graph);
+            int ChromaticNumber2 = AlgorithmD(graph);
+            if (ChromaticNumber1 < ChromaticNumber2)
             {
-                List<int> neighboursColors = graph.GetNeighboursColors(graph.vertices[i]);
-                var enableColors = colors.Where(c => !neighboursColors.Contains(c));
-                graph.vertices[i].Color = enableColors.Min();
-                if (saveHistory)
-                    colorHistory.Add(new Vertice(graph.vertices[i]));
+                ChromaticNumber = ChromaticNumber1;
+                WigdersonColoring(graph,ChromaticNumber,1);
+            }
+            else
+            {
+                ChromaticNumber = ChromaticNumber2;
+                JonsonColoring(graph, ChromaticNumber,1);
             }
         }
 
+        public int AlgorithmC(Graph graph)
+        {
+            int ChromaticNumber = 2;
+            while (ChromaticNumber <= graph.Count())
+            {
+                int AlgB = AlgorithmB(ChromaticNumber, graph, 1);
+                if (AlgB == -1)
+                    ChromaticNumber++;
+
+                else
+                     return ChromaticNumber;
+
+            }
+
+            return graph.Count();
+        }
+
+        public int AlgorithmB(int ChromaticNumber, Graph graph, int number)
+        {
+            int number1;
+            int constant = 1 - (1 / (ChromaticNumber - 1));
+            if (ChromaticNumber = 2 && TwoSetColoring(graph))
+                return 2;
+            if (ChromaticNumber >= Math.Log(graph.Count()))
+                return graph.Count();
+            SortGraphByNeighboursCountDescending();
+            for (int i = 0; i < graph.Count(); i++)
+            {
+                if (graph.vertices[i].Neighbours.Count >= Math.Pow(graph.Count(), constant))
+                {
+                    List<Vertice> Neighbours = graph.vertices[i].Neighbours;
+                    Graph BackTrackingGraph = new Graph(Neighbours);
+                    number1 = AlgorithmB(ChromaticNumber - 1, BackTrackingGraph, 1);
+                    number += number1;
+                    graph.vertices[i].Neighbours.Clear();
+                    graph.vertices[i].Clear();
+
+
+
+
+
+                }
+                
+
+
+
+
+            }
+        }
 
         private void SortGraphByNeighboursCountDescending()
         {
