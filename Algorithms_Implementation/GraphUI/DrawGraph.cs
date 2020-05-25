@@ -13,7 +13,7 @@ namespace Algorithms_Implementation.GraphUI
     public class DrawGraph
     {
         PictureBox pictureBox;
-        private int verticeSize = 30;
+        private int verticeSize = 25;
 
         public DrawGraph()
         {
@@ -35,14 +35,14 @@ namespace Algorithms_Implementation.GraphUI
         {
             Graphics g = pictureBox.CreateGraphics();
             g.FillEllipse(SetColorBrush(vertice), vertice.X - verticeSize / 2, vertice.Y - verticeSize / 2, verticeSize, verticeSize);
-            g.DrawString(vertice.Number.ToString(), new Font("Arial", 16), Brushes.White, vertice.X - verticeSize / 2, vertice.Y - verticeSize / 2);
+            g.DrawString(vertice.Number.ToString(), new Font("Arial", 14), Brushes.White, vertice.X - verticeSize / 2, vertice.Y - verticeSize / 2);
         }
 
         public void DrawVerticeGold(Vertice vertice)
         {
             Graphics g = pictureBox.CreateGraphics();
             g.FillEllipse(Brushes.Goldenrod, vertice.X - verticeSize / 2, vertice.Y - verticeSize / 2, verticeSize, verticeSize);
-            g.DrawString(vertice.Number.ToString(), new Font("Arial", 16), Brushes.White, vertice.X - verticeSize / 2, vertice.Y - verticeSize / 2);
+            g.DrawString(vertice.Number.ToString(), new Font("Arial", 14), Brushes.White, vertice.X - verticeSize / 2, vertice.Y - verticeSize / 2);
         }
 
         public void DrawAllVertice(Graph graph)

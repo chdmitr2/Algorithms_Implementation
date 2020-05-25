@@ -199,40 +199,7 @@ namespace Algorithms_Implementation
             }
         }
 
-        private void GreedyAlgorithmButton_Click(object sender, EventArgs e)
-        {
-            if (StepByStepCheckBox.Checked)
-            {
-                if (sortAlgorithm != "Greedy Coloring: Step By Step" || stepNumber == 0)
-                {
-                    GreedyColoring graphColoring = new GreedyColoring(graph, true);
-                    graphColoring.StartColoring();
-                    SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
-
-                    colorHistory = graphColoring.ReturnColorHistory();
-                    stepNumber = 0;
-                    stepCount = colorHistory.Count;
-
-                    graph.ResetColors();
-                    gui.DrawAllVertice(graph);
-                }
-
-                sortAlgorithm = "Greedy Coloring: Step By Step";
-                StepByStepAlgotythmLogic();
-            }
-            else
-            {
-                GreedyColoring graphColoring = new GreedyColoring(graph);
-                graphColoring.StartColoring();
-                gui.DrawAllVertice(graphColoring.ReturnGraph());
-                SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
-                if (sortAlgorithm != "Greedy Coloring")
-                {
-                    ResetStepByStepOptions();
-                }
-                sortAlgorithm = "Greedy Coloring";
-            }
-        }
+        
 
 
         private void AlgorithmWigderson_Click(object sender, EventArgs e)
@@ -272,7 +239,37 @@ namespace Algorithms_Implementation
 
         private void AlgorithmBlum_Click(object sender, EventArgs e)
         {
+            if (StepByStepCheckBox.Checked)
+            {
+                if (sortAlgorithm != "Algorithm Blum: Step By Step" || stepNumber == 0)
+                {
+                    AlgorithmWigderson graphColoring = new AlgorithmWigderson(graph, true);
+                    graphColoring.StartColoring();
+                    SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
 
+                    colorHistory = graphColoring.ReturnColorHistory();
+                    stepNumber = 0;
+                    stepCount = colorHistory.Count;
+
+                    graph.ResetColors();
+                    gui.DrawAllVertice(graph);
+                }
+
+                sortAlgorithm = "Algorithm Blum: Step By Step";
+                StepByStepAlgotythmLogic();
+            }
+            else
+            {
+                AlgorithmBlum graphColoring = new AlgorithmBlum(graph);
+                graphColoring.StartColoring();
+                gui.DrawAllVertice(graphColoring.ReturnGraph());
+                SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
+                if (sortAlgorithm != "Algorithm Blum")
+                {
+                    ResetStepByStepOptions();
+                }
+                sortAlgorithm = "Algorithm Blum";
+            }
         }
         private void SetColorCount(int number)
         {

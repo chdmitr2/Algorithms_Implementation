@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColoringGraphAlgorithms\AlgorithmBlum.cs" />
     <Compile Include="ColoringGraphAlgorithms\AlgorithmWigderson.cs" />
-    <Compile Include="ColoringGraphAlgorithms\GreedyColoring.cs" />
     <Compile Include="GraphStructure\Graph.cs" />
     <Compile Include="GraphStructure\Vertice.cs" />
     <Compile Include="GraphUI\DrawGraph.cs" />

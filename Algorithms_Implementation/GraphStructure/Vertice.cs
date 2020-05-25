@@ -8,12 +8,13 @@ namespace Algorithms_Implementation.GraphStructure
 {
     public  class Vertice
     {
+
         public float X { get; set; }
         public float Y { get; set; }
 
         public int Number { get; set; }
         public int Color { get; set; }
-        public List<Vertice> Neighbours { get; set; }
+        public List<int> Neighbours { get; set; }
 
         public Vertice()
         {
@@ -21,7 +22,7 @@ namespace Algorithms_Implementation.GraphStructure
             Y = 0;
             Number = 0;
             Color = 0;
-            Neighbours = new List<Vertice>();
+            Neighbours = new List<int>();
         }
 
         public Vertice(Vertice vertice)
@@ -39,7 +40,7 @@ namespace Algorithms_Implementation.GraphStructure
             this.Y = Y;
             this.Number = Number;
             Color = 0;
-            Neighbours = new List<Vertice>();
+            Neighbours = new List<int>();
         }
 
         public Vertice(float X, float Y, int Number, int Color)
@@ -48,7 +49,7 @@ namespace Algorithms_Implementation.GraphStructure
             this.Y = Y;
             this.Number = Number;
             this.Color = Color;
-            Neighbours = new List<Vertice>();
+            Neighbours = new List<int>();
         }
     }
 }

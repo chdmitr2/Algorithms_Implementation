@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms_Implementation.ColoringGraphAlgorithms
 {
-    class AlgorithmWigderson
+    class AlgorithmBlum
     {
         private Graph graph = new Graph();
         private List<int> colors = new List<int>();
@@ -15,12 +15,12 @@ namespace Algorithms_Implementation.ColoringGraphAlgorithms
         bool saveHistory = false;
         private List<Vertice> colorHistory = new List<Vertice>();
 
-        public AlgorithmWigderson(Graph graph)
+        public AlgorithmBlum(Graph graph)
         {
             this.graph = graph;
         }
 
-        public AlgorithmWigderson(Graph graph, bool saveHistory)
+        public AlgorithmBlum(Graph graph, bool saveHistory)
         {
             this.graph = graph;
             this.saveHistory = saveHistory;
@@ -43,7 +43,7 @@ namespace Algorithms_Implementation.ColoringGraphAlgorithms
         }
         public void StartColoring()
         {
-           
+
             graph.ResetColors();
             InitializeColors();
             Graph coloredGraph = new Graph();
@@ -56,7 +56,7 @@ namespace Algorithms_Implementation.ColoringGraphAlgorithms
 
                 SortGraphByNeighboursCountDescending();
                 SortGraphByMostColoredNeighboursCountDescending();
-                
+
 
                 bool coloredStatus = false;
                 int j = 0;
@@ -66,9 +66,9 @@ namespace Algorithms_Implementation.ColoringGraphAlgorithms
 
                     if (coloredGraph.GetVertice(graph.vertices[j].Number) == null)
                     {
-                        if(graph.vertices[j].Neighbours.Count < Math.Pow(graph.Count(),1/(ChrNum - 1)))
+                        if (graph.vertices[j].Neighbours.Count < Math.Pow(graph.Count(), 1 / (ChrNum - 1)))
                         {
-                            
+
                             List<int> neighboursColors = graph.GetNeighboursColors(graph.vertices[j]);
 
                             var enableColors = colors.Where(c => !neighboursColors.Contains(c));
@@ -82,7 +82,7 @@ namespace Algorithms_Implementation.ColoringGraphAlgorithms
                         else
 
                         {
-                            
+
                             List<int> neighboursColors = graph.GetNeighboursColors(graph.vertices[j]);
                             var enableColors = colors.Where(c => !neighboursColors.Contains(c));
                             graph.vertices[j].Color = enableColors.Min();
@@ -95,14 +95,14 @@ namespace Algorithms_Implementation.ColoringGraphAlgorithms
 
 
                     }
-                  
-                         j++;
-                }                                
-        
+
+                    j++;
+                }
+
             }
             graph = coloredGraph;
         }
-        
+
         private void SortGraphByNeighboursCountDescending()
         {
             Graph sortedGraph = new Graph();
@@ -150,4 +150,3 @@ namespace Algorithms_Implementation.ColoringGraphAlgorithms
         }
     }
 }
-

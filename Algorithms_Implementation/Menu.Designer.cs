@@ -46,7 +46,6 @@
             this.AddEdgeButton = new System.Windows.Forms.Button();
             this.ClearAllButton = new System.Windows.Forms.Button();
             this.AddVerticeButton = new System.Windows.Forms.Button();
-            this.GreedyAlgorithmButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +98,7 @@
             // AlgorithmBlum
             // 
             this.AlgorithmBlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AlgorithmBlum.Location = new System.Drawing.Point(870, 335);
+            this.AlgorithmBlum.Location = new System.Drawing.Point(867, 304);
             this.AlgorithmBlum.Margin = new System.Windows.Forms.Padding(2);
             this.AlgorithmBlum.Name = "AlgorithmBlum";
             this.AlgorithmBlum.Size = new System.Drawing.Size(105, 65);
@@ -111,7 +110,7 @@
             // AlgorithmWigderson
             // 
             this.AlgorithmWigderson.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AlgorithmWigderson.Location = new System.Drawing.Point(870, 169);
+            this.AlgorithmWigderson.Location = new System.Drawing.Point(867, 196);
             this.AlgorithmWigderson.Margin = new System.Windows.Forms.Padding(2);
             this.AlgorithmWigderson.Name = "AlgorithmWigderson";
             this.AlgorithmWigderson.Size = new System.Drawing.Size(105, 65);
@@ -260,24 +259,11 @@
             this.AddVerticeButton.UseVisualStyleBackColor = true;
             this.AddVerticeButton.Click += new System.EventHandler(this.AddVerticeButton_Click);
             // 
-            // GreedyAlgorithmButton
-            // 
-            this.GreedyAlgorithmButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GreedyAlgorithmButton.Location = new System.Drawing.Point(870, 251);
-            this.GreedyAlgorithmButton.Margin = new System.Windows.Forms.Padding(2);
-            this.GreedyAlgorithmButton.Name = "GreedyAlgorithmButton";
-            this.GreedyAlgorithmButton.Size = new System.Drawing.Size(105, 65);
-            this.GreedyAlgorithmButton.TabIndex = 44;
-            this.GreedyAlgorithmButton.Text = "Greedy Algorithm Graph Coloring";
-            this.GreedyAlgorithmButton.UseVisualStyleBackColor = true;
-            this.GreedyAlgorithmButton.Click += new System.EventHandler(this.GreedyAlgorithmButton_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 510);
-            this.Controls.Add(this.GreedyAlgorithmButton);
             this.Controls.Add(this.StepLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -323,7 +309,6 @@
         private System.Windows.Forms.Button AddEdgeButton;
         private System.Windows.Forms.Button ClearAllButton;
         private System.Windows.Forms.Button AddVerticeButton;
-        private System.Windows.Forms.Button GreedyAlgorithmButton;
     }
 }
 
