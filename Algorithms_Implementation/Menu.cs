@@ -12,6 +12,7 @@ namespace Algorithms_Implementation
 
         private DrawGraph gui;
         private Graph graph = new Graph();
+        int ColorCount = 0;
        
 
         private bool enableVerticePaint = true;
@@ -81,6 +82,7 @@ namespace Algorithms_Implementation
                 sortAlgorithm = "";
                 ResetStepByStepOptions();
                 SetColorCount(0);
+                SetColorCount2(ColorCount);
 
                 graph.ResetColors();
                 gui.DrawAllVertice(graph);
@@ -199,8 +201,48 @@ namespace Algorithms_Implementation
             }
         }
 
-        
 
+        private void AlgorithmJonson_Click(object sender, EventArgs e)
+        {
+            int count = 0;
+            if (StepByStepCheckBox.Checked)
+            {
+                if (sortAlgorithm != "Algorithm Jonson: Step By Step" || stepNumber == 0)
+                {
+                    AlgorithmJonson graphColoring = new AlgorithmJonson(graph, true);
+                  count =   graphColoring.StartColoring();
+                    SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
+                    SetColorCount2(count);
+
+
+
+                    colorHistory = graphColoring.ReturnColorHistory();
+                    stepNumber = 0;
+                    stepCount = colorHistory.Count;
+
+                    graph.ResetColors();
+                    gui.DrawAllVertice(graph);
+                }
+
+                sortAlgorithm = "Algorithm Jonson: Step By Step";
+                StepByStepAlgotythmLogic();
+            }
+            else
+            {
+                AlgorithmJonson graphColoring = new AlgorithmJonson(graph);
+                count = graphColoring.StartColoring();
+                gui.DrawAllVertice(graphColoring.ReturnGraph());
+                SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
+                SetColorCount2(count);
+
+
+                if (sortAlgorithm != "Algorithm Jonson")
+                {
+                    ResetStepByStepOptions();
+                }
+                sortAlgorithm = "Algorithm Jonson";
+            }
+        }
 
         private void AlgorithmWigderson_Click(object sender, EventArgs e)
         {
@@ -211,6 +253,7 @@ namespace Algorithms_Implementation
                     AlgorithmWigderson graphColoring = new AlgorithmWigderson(graph, true);
                     graphColoring.StartColoring();
                     SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
+                   
 
                     colorHistory = graphColoring.ReturnColorHistory();
                     stepNumber = 0;
@@ -229,6 +272,7 @@ namespace Algorithms_Implementation
                 graphColoring.StartColoring();
                 gui.DrawAllVertice(graphColoring.ReturnGraph());
                 SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
+                
                 if (sortAlgorithm != "Algorithm Wigderson")
                 {
                     ResetStepByStepOptions();
@@ -246,6 +290,7 @@ namespace Algorithms_Implementation
                     AlgorithmWigderson graphColoring = new AlgorithmWigderson(graph, true);
                     graphColoring.StartColoring();
                     SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
+                   
 
                     colorHistory = graphColoring.ReturnColorHistory();
                     stepNumber = 0;
@@ -264,6 +309,7 @@ namespace Algorithms_Implementation
                 graphColoring.StartColoring();
                 gui.DrawAllVertice(graphColoring.ReturnGraph());
                 SetColorCount(graphColoring.ReturnGraph().ChromaticNumber());
+               
                 if (sortAlgorithm != "Algorithm Blum")
                 {
                     ResetStepByStepOptions();
@@ -283,6 +329,7 @@ namespace Algorithms_Implementation
             verticeNumber = 0;
             firstVertice = null;
             SetColorCount(0);
+            SetColorCount2(0);
             ResetStepByStepOptions();
         }
         private void ClearEdgesButton_Click(object sender, EventArgs e)
@@ -306,6 +353,9 @@ namespace Algorithms_Implementation
             StepInfoUpdate();
         }
 
-      
+        private void SetColorCount2(int number)
+        {
+            CountColorLabel2.Text = number.ToString();
+        }
     }
 }

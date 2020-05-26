@@ -26,6 +26,7 @@ namespace Algorithms_Implementation.ColoringGraphAlgorithms
             this.saveHistory = saveHistory;
         }
 
+
         public int CheckChromaticNumber(Graph graph)
         {
 

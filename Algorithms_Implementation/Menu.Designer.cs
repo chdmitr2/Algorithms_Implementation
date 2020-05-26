@@ -35,17 +35,18 @@
             this.AlgorithmBlum = new System.Windows.Forms.Button();
             this.AlgorithmWigderson = new System.Windows.Forms.Button();
             this.PictureBox = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.CountColorLabel2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.StepLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.ClearEdgesButton = new System.Windows.Forms.Button();
             this.StepByStepCheckBox = new System.Windows.Forms.CheckBox();
             this.AddEdgeButton = new System.Windows.Forms.Button();
             this.ClearAllButton = new System.Windows.Forms.Button();
             this.AddVerticeButton = new System.Windows.Forms.Button();
+            this.AlgorithmJonson = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +99,7 @@
             // AlgorithmBlum
             // 
             this.AlgorithmBlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AlgorithmBlum.Location = new System.Drawing.Point(867, 304);
+            this.AlgorithmBlum.Location = new System.Drawing.Point(870, 427);
             this.AlgorithmBlum.Margin = new System.Windows.Forms.Padding(2);
             this.AlgorithmBlum.Name = "AlgorithmBlum";
             this.AlgorithmBlum.Size = new System.Drawing.Size(105, 65);
@@ -110,7 +111,7 @@
             // AlgorithmWigderson
             // 
             this.AlgorithmWigderson.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AlgorithmWigderson.Location = new System.Drawing.Point(867, 196);
+            this.AlgorithmWigderson.Location = new System.Drawing.Point(870, 310);
             this.AlgorithmWigderson.Margin = new System.Windows.Forms.Padding(2);
             this.AlgorithmWigderson.Name = "AlgorithmWigderson";
             this.AlgorithmWigderson.Size = new System.Drawing.Size(105, 65);
@@ -130,18 +131,18 @@
             this.PictureBox.TabStop = false;
             this.PictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseClick);
             // 
-            // label2
+            // CountColorLabel2
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.Window;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(870, 111);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 42);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "0";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CountColorLabel2.BackColor = System.Drawing.SystemColors.Window;
+            this.CountColorLabel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CountColorLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CountColorLabel2.Location = new System.Drawing.Point(870, 111);
+            this.CountColorLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CountColorLabel2.Name = "CountColorLabel2";
+            this.CountColorLabel2.Size = new System.Drawing.Size(102, 42);
+            this.CountColorLabel2.TabIndex = 34;
+            this.CountColorLabel2.Text = "0";
+            this.CountColorLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -169,23 +170,12 @@
             // 
             this.StepLabel.AutoSize = true;
             this.StepLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.StepLabel.Location = new System.Drawing.Point(450, 33);
+            this.StepLabel.Location = new System.Drawing.Point(478, 38);
             this.StepLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StepLabel.Name = "StepLabel";
             this.StepLabel.Size = new System.Drawing.Size(61, 15);
             this.StepLabel.TabIndex = 43;
             this.StepLabel.Text = "Step: 0 / 0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(450, 7);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 15);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Step By Step Advenced Info:";
             // 
             // label5
             // 
@@ -259,11 +249,35 @@
             this.AddVerticeButton.UseVisualStyleBackColor = true;
             this.AddVerticeButton.Click += new System.EventHandler(this.AddVerticeButton_Click);
             // 
+            // AlgorithmJonson
+            // 
+            this.AlgorithmJonson.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AlgorithmJonson.Location = new System.Drawing.Point(870, 200);
+            this.AlgorithmJonson.Margin = new System.Windows.Forms.Padding(2);
+            this.AlgorithmJonson.Name = "AlgorithmJonson";
+            this.AlgorithmJonson.Size = new System.Drawing.Size(105, 64);
+            this.AlgorithmJonson.TabIndex = 44;
+            this.AlgorithmJonson.Text = "Algorithm Jonson";
+            this.AlgorithmJonson.UseVisualStyleBackColor = true;
+            this.AlgorithmJonson.Click += new System.EventHandler(this.AlgorithmJonson_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(425, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 15);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Step By Step Advenced Info:";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 510);
+            this.Controls.Add(this.AlgorithmJonson);
             this.Controls.Add(this.StepLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -273,7 +287,7 @@
             this.Controls.Add(this.ClearAllButton);
             this.Controls.Add(this.AddVerticeButton);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.CountColorLabel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.StepByStepAdvencedInfoLabel);
@@ -298,17 +312,18 @@
         private System.Windows.Forms.Button AlgorithmBlum;
         private System.Windows.Forms.Button AlgorithmWigderson;
         private System.Windows.Forms.PictureBox PictureBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label CountColorLabel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label StepLabel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ClearEdgesButton;
         private System.Windows.Forms.CheckBox StepByStepCheckBox;
         private System.Windows.Forms.Button AddEdgeButton;
         private System.Windows.Forms.Button ClearAllButton;
         private System.Windows.Forms.Button AddVerticeButton;
+        private System.Windows.Forms.Button AlgorithmJonson;
+        private System.Windows.Forms.Label label4;
     }
 }
 

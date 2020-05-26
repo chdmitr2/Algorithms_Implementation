@@ -147,22 +147,7 @@ namespace Algorithms_Implementation.GraphStructure
             return neighboursColors;
         }
 
-        public List<int> GetPreviousNeighboursColors(Vertice vertice)
-        {
-            List<int> neighboursColors = new List<int>();
-            foreach (int neighbours in vertice.Neighbours)
-            {
-                if (neighbours < vertice.Number)
-                {
-                    Vertice neighbourVertice = vertices.Find(x => x.Number == neighbours);
-                    if (neighbourVertice != null)
-                        if (!neighboursColors.Contains(neighbourVertice.Color))
-                            neighboursColors.Add(neighbourVertice.Color);
-                }
-            }
-            return neighboursColors;
-        }
-
+       
         public int ChromaticNumber()
         {
             List<int> colors = new List<int>();

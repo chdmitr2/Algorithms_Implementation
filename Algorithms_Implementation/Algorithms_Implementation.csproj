@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColoringGraphAlgorithms\AlgorithmBlum.cs" />
+    <Compile Include="ColoringGraphAlgorithms\AlgorithmJonson.cs" />
     <Compile Include="ColoringGraphAlgorithms\AlgorithmWigderson.cs" />
     <Compile Include="GraphStructure\Graph.cs" />
     <Compile Include="GraphStructure\Vertice.cs" />

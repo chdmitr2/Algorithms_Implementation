@@ -13,7 +13,7 @@ namespace Algorithms_Implementation.GraphUI
     public class DrawGraph
     {
         PictureBox pictureBox;
-        private int verticeSize = 25;
+        private int verticeSize = 30;
 
         public DrawGraph()
         {
